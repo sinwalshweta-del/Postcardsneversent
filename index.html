@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcards You Never Sent</title>
+    <meta name="description" content="Distill your travel memories into digital postcards.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300&family=Homemade+Apple&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #fafaf8;
+            color: #2a2a2a;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-handwriting { font-family: 'Homemade Apple', cursive; }
+        .font-title { font-family: 'Amatic SC', cursive; }
+        .font-playful { font-family: 'Fredoka', sans-serif; }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+
+        .card-inner {
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+        .card-flipped { transform: rotateY(180deg); }
+        .card-front, .card-back {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .card-back { transform: rotateY(180deg); }
+        .paper-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "html-to-image": "https://esm.sh/html-to-image@^1.11.13",
+    "jspdf": "https://esm.sh/jspdf@^4.0.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+<body class="paper-overlay">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
